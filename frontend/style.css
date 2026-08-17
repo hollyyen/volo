@@ -1,0 +1,137 @@
+:root {
+  --bg: #0f1117;
+  --panel: #161923;
+  --border: #2a2e3a;
+  --text: #e6e6e6;
+  --muted: #8a8f9c;
+  --accent: #6c5ce7;
+  --accent-2: #00d1a0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { display: flex; align-items: center; gap: 8px; }
+.logo {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+}
+.brand-name { font-weight: 700; font-size: 18px; }
+.brand-sub { color: var(--muted); font-size: 13px; margin-left: 6px; }
+
+.controls { display: flex; gap: 10px; align-items: center; }
+
+select, button {
+  background: #1e2230;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#runBtn {
+  background: var(--accent-2);
+  color: #051a14;
+  font-weight: 700;
+  border: none;
+}
+#runBtn:hover { opacity: 0.9; }
+#runBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.workspace {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.editor-pane {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  min-width: 0;
+}
+
+.io-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.io-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  min-height: 0;
+}
+
+.pane-header {
+  background: var(--panel);
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.CodeMirror {
+  flex: 1;
+  height: 100% !important;
+  font-size: 14px;
+}
+
+#stdinBox {
+  flex: 1;
+  background: #10131b;
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  resize: none;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+}
+
+#output {
+  flex: 1;
+  margin: 0;
+  padding: 10px;
+  background: #0b0d12;
+  color: #b8f5d0;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+}
+
+.statusbar {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--muted);
+}

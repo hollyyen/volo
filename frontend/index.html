@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Volo — Online Compiler</title>
+<link rel="stylesheet" href="style.css" />
+
+<!-- CodeMirror (lightweight code editor via CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">V</span>
+    <span class="brand-name">Volo</span>
+    <span class="brand-sub">Online Compiler</span>
+  </div>
+  <div class="controls">
+    <select id="languageSelect"></select>
+    <button id="runBtn">Run ▶</button>
+  </div>
+</header>
+
+<main class="workspace">
+  <section class="editor-pane">
+    <div class="pane-header">volo1<span id="fileExt">.cpp</span></div>
+    <textarea id="editor"></textarea>
+  </section>
+
+  <section class="io-pane">
+    <div class="io-block">
+      <div class="pane-header">Input (stdin)</div>
+      <textarea id="stdinBox" placeholder="Optional input for your program..."></textarea>
+    </div>
+    <div class="io-block output-block">
+      <div class="pane-header">Output</div>
+      <pre id="output">Click "Run" to execute your code.</pre>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span id="statusText">Ready</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
